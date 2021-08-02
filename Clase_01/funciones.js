@@ -100,8 +100,27 @@ function test (name){
   
 
 
+// ============ //
 
 
-
-
-
+// ********************** //
+// ej_5 Propiedades - prototype y estaticas //
+// ********************** //
+//Funcion constructora
+function Persona (nombre, edad){
+    //Propiedades instancia de Persona
+    this.nombre = nombre;
+    this.edad = edad;
+    Persona.contador++
+  }
+  //propiedades prototipo de persona
+  Persona.prototype.saludo = function() {
+    console.log('Hola!')
+  }
+  //propiedades estaticas de persona (No pertenece a la instancia)
+  Persona.contador = 0;
+  
+  let juan = new Persona('Juan', 35)
+  
+  console.log(Persona.contador) // 1
+  juan.saludo(); // "Hola!"
