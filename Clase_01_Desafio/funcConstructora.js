@@ -1,24 +1,28 @@
-function usuario (nombre, apellido, libros, mascotas){
+function Usuario (nombre, apellido, libros, mascotas){
     // Propiedad instancia
     this.nombre = nombre;
     this.apellido = apellido;
     this.libros = libros;
     this.mascotas = mascotas;
+
+    // Las propiedades prototipo pueden ir dentro o fuera de la funcion
+    // Propiedades prototipo
+    this.getFullName = function(){
+    console.log( `Nombre Completo: ${this.nombre} ${this.apellido}`)
+    }
+    this.addMascota = function(mascota){
+        misMascotas = [...mascotas, mascota];
+        // console.log( `Mascotas: ${[misMascotas]}`)
+        // return misMascotas;
+    }
+    this.getMascotas = function(misMascotas){
+        console.log( `${this.nombre} tiene: ${misMascotas.length} mascotas`)
+    }
 }
 
+// Las propiedades prototipo pueden ir dentro o fuera de la funcion
 // Propiedades prototipo
-usuario.prototype.getFullName = function(){
-    console.log( `Nombre Completo: ${Ale.nombre} ${Ale.apellido}`)
-}
-usuario.prototype.addMascota = function(mascota){
-    misMascotas = [...mascotas, mascota];
-    // console.log( `Mascotas: ${[misMascotas]}`)
-    // return misMascotas;
-}
-usuario.prototype.getMascotas = function(misMascotas){
-    console.log( `${Ale.nombre} tiene: ${misMascotas.length} mascotas`)
-}
-usuario.prototype.addBook = function(book, autor){
+Usuario.prototype.addBook = function(book, autor){
     const newBook = {
         Libro: book,
         Autor: autor
@@ -26,7 +30,7 @@ usuario.prototype.addBook = function(book, autor){
     misLibros = [...libros, newBook]
     // console.log(misLibros);
 }
-usuario.prototype.getBooks = function(misLibros){
+Usuario.prototype.getBooks = function(misLibros){
     console.log('\nLista de libros actualizada: ')
    return misLibros.map(milibro => (
         console.log('- '+milibro.Libro)
@@ -75,7 +79,9 @@ let libros = [
     }
 ];
 
-let Ale = new usuario ('Alejandro', 'Huertas', libros, mascotas)
+
+
+let Ale = new Usuario ('Alejandro', 'Huertas', libros, mascotas)
 
 Ale.getFullName();
 Ale.addMascota('hormiga');

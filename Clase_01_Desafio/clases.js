@@ -1,4 +1,4 @@
-class usuario {
+class Usuario {
     constructor (nombre, apellido, libros, mascotas){
         // Propiedad instancia
         this.nombre = nombre;
@@ -8,7 +8,7 @@ class usuario {
     }
 
     getFullName (){
-        console.log( `Nombre Completo: ${Ale.nombre} ${Ale.apellido}`)
+        console.log( `Nombre Completo: ${this.nombre} ${this.apellido}`)
     }
     addMascota (mascota){
         const misMascotas = [...mascotas, mascota];
@@ -16,7 +16,7 @@ class usuario {
         return misMascotas;
     }
     getMascotas (misMascotas){
-        console.log( `${Ale.nombre} tiene: ${misMascotas.length} mascotas`)
+        console.log( `${this.nombre} tiene: ${misMascotas.length} mascotas`)
     }
     addBook (book, autor){
         const newBook = {
@@ -34,7 +34,7 @@ class usuario {
     }
 }
 
-
+// esto es un comentario
 const mascotas = ['perro', 'gato']
 
 let libros = [
@@ -78,7 +78,7 @@ let libros = [
 
 
 
-let Ale = new usuario ('Alejandro', 'Huertas', libros, mascotas);
+let Ale = new Usuario ('Alejandro', 'Huertas', libros, mascotas);
 
 Ale.getFullName();
 const misMascotas = Ale.addMascota('hormiga');
