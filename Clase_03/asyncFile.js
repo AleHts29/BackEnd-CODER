@@ -14,7 +14,7 @@ fs.writeFile('./testAsync.txt', 'Hola soy un contenido Async', {encoding: 'utf-8
     if(err){
         throw 'ERROR al escribir'
     }
-    console.log('Se escribe el archivo de forma correcta')
+    console.log('Se escribe/crea el archivo testAsync de forma correcta')
 });
 
 
@@ -23,7 +23,7 @@ fs.appendFile('./testAsync.txt', '\nHola soy un contenido Async agregado con app
     if(err){
         throw 'ERROR al añadir'
     }
-    console.log('Se añade de forma correcta')
+    console.log('Se añade contenido al archivo testAsync de forma correcta')
 });
 
 
@@ -32,5 +32,5 @@ fs.unlink('./testAsync.txt', (err) => {
     if(err){
         throw 'ERROR al añadir'
     }
-    console.log('Se añade de forma correcta')
+    console.log('Se borra el archivo testAsync de forma correcta')
 });

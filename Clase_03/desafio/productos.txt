@@ -1,0 +1,32 @@
+[
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 1
+  },
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 2
+  },
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 3
+  },
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 4
+  },
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 5
+  },
+  {
+    "name": "New producto",
+    "price": "newPrice",
+    "id": 6
+  }
+]

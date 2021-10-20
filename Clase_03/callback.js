@@ -4,12 +4,11 @@
 
 // Todas las funciones tendrán que ser realizadas con sintaxis flecha.
 
-const suma = (a, b) => a + b;
+const suma = (a, b) => `suma: ${a + b}`;
 const resta = (a, b) => a - b;
 const multiplicacion = (a, b) => a * b;
 
 const operacion = (a, b, cb) => {
-
     return cb(a, b)
 }
 console.log(operacion(6, 3, suma))

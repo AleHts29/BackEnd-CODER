@@ -24,13 +24,14 @@ let libros = [
     }
 ];
 
+// Escribir
+fs.writeFileSync('./test.txt','Escribo un contenido nuevo', {encoding:'utf-8'})
 
 // Leer un archivo txt
 let readFileOne = fs.readFileSync('./test.txt', {encoding:'utf-8'})
 console.log(readFileOne);
 
-// Escribir
-fs.writeFileSync('./test.txt','Escribo un contenido nuevo', {encoding:'utf-8'})
+
 
 // Escribir, si no existe lo crea
 fs.writeFileSync('./test2.json', JSON.stringify(libros, null, 2), {encoding:'utf-8'})
@@ -47,7 +48,7 @@ try{
     let readFileTry = fs.readFileSync('./test.txt', {encoding:'utf-8'})
 console.log(readFileTry);
 }catch (err){
-    throw new Error('Error al leer')
+    throw new Error('Error al leer el archivo test')
 }
 
 // Ejercicio
@@ -61,10 +62,27 @@ console.log(readFileTry);
 
 function DATE() {
     let date = new Date()
-    let fecha =  date.getDate()
+    let numDayMes =  date.getDate()
+    let numMes = date.getMonth()
+    let numDaySemana = date.getDay()
     let hora = date.getHours()
-    return `fecha: ${fecha} - Hora ${hora}`
+    let min = date.getMinutes()
+
+    if(((( hora) >= 0))&&((hora)<10)){
+        hora = `0${hora}`
+    }
+    if(( min >= 0) && ( min < 10) ){
+        min = `0${min}`
+    }
+
+   const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
+
+   let diaNombre = diasSemana[numDaySemana];
+
+    return `fecha: ${numDayMes}/${numMes}/${date.getFullYear()} - Dia ${diaNombre} Hora: ${hora}:${min} \n`
 }
+
+
 
 try{
     // Escribir
@@ -74,5 +92,5 @@ try{
     let readFileTry = fs.readFileSync('./fyh.txt', {encoding:'utf-8'})
     console.log(readFileTry);
     }catch (err){
-        throw new Error('Error al leer')
+        throw new Error('Error al leer el archivo fyh');
 }
