@@ -69,11 +69,11 @@ let lowerPriceProduct = lowerPrice(productos)
 console.log(lowerPriceProduct)
 
 
-lowerPrice = (arrProducts) => {
+highPrice = (arrProducts) => {
     
     const  auxArr = (arrProducts.sort((a, b) => b.precio - a.precio));
     return (auxArr[0].precio).toFixed(2)
 }
 // D:
-let maxPriceProduct = lowerPrice(productos)
-console.log(maxPriceProduct)
+let highPriceProduct = highPrice(productos)
+console.log(highPriceProduct)
