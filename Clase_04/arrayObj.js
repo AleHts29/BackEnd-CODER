@@ -60,15 +60,20 @@ console.log(average)
 
 
 lowerPrice = (arrProducts) => {
-    let total = [];
-
-    arrProducts.sort((a, b) =>{
-       total = a.precio > b.precio ?  1 :  -1;
-    })
-    console.log(total)
-    // total = arrProducts[0].precio
-    // return total.toFixed(2);
+    
+    const  auxArr = (arrProducts.sort((a, b) => a.precio - b.precio));
+    return (auxArr[0].precio).toFixed(2)
 }
 // D:
 let lowerPriceProduct = lowerPrice(productos)
 console.log(lowerPriceProduct)
+
+
+lowerPrice = (arrProducts) => {
+    
+    const  auxArr = (arrProducts.sort((a, b) => b.precio - a.precio));
+    return (auxArr[0].precio).toFixed(2)
+}
+// D:
+let maxPriceProduct = lowerPrice(productos)
+console.log(maxPriceProduct)
