@@ -50,7 +50,7 @@ class Contenedor {
 }
 
 let ListProducts = new Contenedor();
-ListProducts.getAll('./productos.txt')
+ListProducts.getAll("./productos.txt")
 
 
 
