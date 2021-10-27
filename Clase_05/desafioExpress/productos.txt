@@ -5,7 +5,7 @@
       "id": 1
     },
     {
-      "name": "Auriculares AKG240  ",
+      "name": "Auriculares AKG240",
       "price": 210,
       "id": 2
     },

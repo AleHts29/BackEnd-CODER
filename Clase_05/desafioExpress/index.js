@@ -60,7 +60,3 @@ ListProducts.getAll('./productos.txt')
 app.listen(port, () => {
     console.log('Server run on port ' + port)
 })
-
-
-
-
