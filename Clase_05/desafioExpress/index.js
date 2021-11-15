@@ -33,7 +33,7 @@ class Contenedor {
         if (data){
             let dataFile = JSON.parse(data);
             // this.producto = [...dataFile];
-       
+        
         // Me devuelve un array con los productos disponibles en el server
         app.get('/productos', (req, res) => {
             res.json(dataFile)
