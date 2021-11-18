@@ -1,12 +1,15 @@
 const express = require("express");
 
 const app = express();
-const arr = require('./arr')
+let arr = require('./arr')
 
-// Le informo a mi app que va a reciboir archivos en formato JSON
+
+// Le informo a mi server que va a recibir archivos en formato JSON
 app.use(express.json());
 
-console.log(arr)
+// permite que el objeto req.body contendra valores de cualquier tipo, en lugar de solo caracteres
+app.use(express.urlencoded({extended:true}))
+
 
 
 // GET
@@ -83,16 +86,15 @@ app.put('/:id', (req, res) => {
     // desestructuracion --> Datos que vienen de Thunder Client o postMan (metodo PUT)
     let {name, price} = req.body;
 
-    const newArr = arr.filter((a) => {
+    let newArr = arr.filter((a) => {
         return a.id == parseInt(id);
     })
 
-    for (const key in newArr) {
-        newArr[key].name = name;
-        newArr[key].price = price;
-    }
+    newArr[0].name = name;
+    newArr[0].price = price;
+    
         
-    res.send(`El id:${id} se actualizo correctamente`);
+    res.send(`El id-${id} se actualizo correctamente`);
 
 })
 
@@ -101,7 +103,10 @@ app.put('/:id', (req, res) => {
 app.delete('/:id', (req, res) => {
     let {id} = req.params;
 
-    // Falta logica
+    let newArr = arr.filter((a) => {
+        return a.id != parseInt(id);
+    })
+    arr = newArr;
 
     res.send(`El id:${id} se elimono correctamente`)
 })
