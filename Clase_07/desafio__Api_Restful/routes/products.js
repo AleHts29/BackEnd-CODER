@@ -1,45 +1,62 @@
 const express = require("express");
-const Container = require("../src/utils/container");
+const ClassContainer = require("../container");
 
 const { Router } = express;
 const router = new Router();
+const Container = new ClassContainer("./products.txt");
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
-// middleware
-router.use(function (req, res, next) {
-  Container.getAll();
-  next();
-});
-
-// Static files
-// esto no se usa
-router.use("/static", express.static(__dirname + "/public")); //  __dirname --> ruta absoluta
-
 router.get("/", async (req, res) => {
-  //   Container.getAll();
-  //   console.log(Container.getAll());
-  //   res.sendFile(__dirname + "/public/index.html");
-  res.send("devuelve todos los productos..");
+  let dataFIle = await Container.getAll();
+  if (Object.keys(dataFIle).length === 0) {
+    return res.send({ MSG: "El archivo se encuentra vacio.." });
+  }
+  res.json(dataFIle);
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", async (req, res) => {
   //   res.sendFile(__dirname + "/public/form.html");
   let { id } = req.params;
-  res.send("devuelve un producto segun su id.. " + id);
+  let dataFIle = await Container.getById(id);
+  if (dataFIle == "NULL") {
+    return res.send({ MSG: "No se encuentra el id.." });
+  }
+  res.json(dataFIle);
 });
 
-router.post("/", (req, res) => {
-  res.send("recibe y agrega un producto..");
+router.post("/", async (req, res) => {
+  let newProduct = req.body;
+  if (newProduct.name == "" || newProduct.price == "") {
+    return res.send({ Error: "No se cargo ningun producto.." });
+  }
+  await Container.save(newProduct);
+  res.send("Producto agredado de forma exitosa!..");
 });
 
-router.put("/:id", (req, res) => {
-  res.send("recibe y actualiza un producto segun su id.. " + req.params.id);
+router.put("/:id", async (req, res) => {
+  let { id } = req.params;
+
+  let dataFIle = await Container.getById(id);
+
+  if (dataFIle == "NULL") {
+    return res.send({ MSG: "No se encuentra el id.." });
+  }
+  let newData = req.body;
+  let upDateItem = await Container.updateById(id, newData);
+  res.send(upDateItem);
 });
 
-router.delete("/:id", (req, res) => {
-  res.send("elimina un producto segun su id.. " + req.params.id);
+router.delete("/:id", async (req, res) => {
+  let { id } = req.params;
+  let dataFIle = await Container.getById(id);
+
+  if (dataFIle == "NULL") {
+    return res.send({ MSG: "No se encuentra el id.." });
+  }
+  let returnData = await Container.deleteById(id);
+  res.send(returnData);
 });
 
 module.exports = router;

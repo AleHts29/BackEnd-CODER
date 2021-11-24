@@ -3,7 +3,7 @@ const fs = require("fs");
 const writeFileAsync = async (arr) => {
   try {
     await fs.promises.writeFile(
-      "./products.txt",
+      "../db/products.txt",
       JSON.stringify(arr, null, 2),
       "utf-8"
     );
@@ -12,9 +12,9 @@ const writeFileAsync = async (arr) => {
   }
 };
 
-const readFileAsync = async (arr) => {
+const readFileAsync = async (path) => {
   try {
-    let file = await fs.promises.readFile("../db/products.txt", "utf-8");
+    let file = await fs.promises.readFile(path, "utf-8");
     return file;
   } catch (err) {
     throw new Error("Error de lectura!");
@@ -23,7 +23,8 @@ const readFileAsync = async (arr) => {
 
 // Class container
 class Contenedor {
-  constructor() {
+  constructor(path) {
+    this.nameFile = path;
     this.producto = [];
   }
 
@@ -71,12 +72,11 @@ class Contenedor {
 
   // Metodo getAll(Number)
   async getAll() {
-    let fileExits = await readFileAsync();
+    let fileExits = await readFileAsync(this.nameFile);
 
     if (fileExits) {
       let dataFile = JSON.parse(fileExits);
-      this.producto.push(dataFile);
-      console.log(this.producto);
+      console.log(dataFile);
       return dataFile;
     }
   }
@@ -110,13 +110,13 @@ class Contenedor {
   }
 }
 
-let container = new Contenedor();
+// let container = new Contenedor();
 
 // Ejecucion de metodos
 // c.save(newDatos);
-// c.getById(3)
+// container.getById(3);
 // container.getAll();
 // c.deleteById(2);
 // c.deleteAll()
 
-module.exports = container;
+module.exports = Contenedor;
