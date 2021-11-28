@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- en este div renderizo  -->
+    <div id="caja"></div>
+
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- template de variables que voy a renderizar -->
+    <script type="text/x-handlebars-template" id="template">
+      <h1>{{titulo}}</h1>
+      <div>
+        <h2>{{tituloLista}}</h2>
+        <ul>
+          {{#each data}}
+            <li>{{this.name}} {{this.lastName}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </script>
+
+    <script>
+      let scriptHtml = document.querySelector("#template").innerHTML;
+
+      // compile the template
+      let template1 = Handlebars.compile(scriptHtml);
+      let html = template1({
+        titulo: "Titulo con Handlebars",
+        tituloLista: "Lista de objetos con Handlebars",
+        data: [
+          { name: "Ale", lastName: "Huertas" },
+          { name: "Juan", lastName: "Paez" },
+          { name: "Carla", lastName: "Duarte" },
+        ],
+      });
+      console.log(html);
+      let caja = (document.querySelector("#caja").innerHTML = html);
+
+      var template2 = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+      // execute the compiled template and print the output to the console
+      console.log(template2({ doesWhat: "rocks!" }));
+    </script>
+  </body>
+</html>

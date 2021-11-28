@@ -1,0 +1,15 @@
+{{>nav}}
+
+<div class="container border my-5 p-3">
+<h2>Soy la vista products.hbs ---> Me renderizo dentro del layout home.hbs</h2>
+
+<div>
+    <p>Product List</p>
+    <ul>
+        {{#each data}}
+            <li>{{this.name}} - Price: {{this.price}}</li>
+        {{/each}}
+    </ul>
+    <a href="/">Ir a main</a>
+</div>
+</div>
