@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+
+  <body>
+    <%- include('templates/nav'); -%>
+    <div class="container contApp my-5">
+      <div class="jumbotron text-center border-bottom my-3">
+        <h1 class="display-4">Welcome to the App HTs - Store</h1>
+        <p class="lead">This aplication is for administration users</p>
+      </div>
+
+      <% if(admin){ %>
+      <p>
+        <%= texto %> ---> Solo se renderiza si la variable admin es igual a true
+      </p>
+      <% } %>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+  <body>
+    <%- include('templates/nav'); -%>
+    <div class="container my-5 border">
+      <h1>Hola desde index.ejs</h1>
+
+      <% if(admin){ %>
+      <p>
+        <%= texto %> ---> Solo se renderiza si la variable admin es igual a true
+      </p>
+      <% } %>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>

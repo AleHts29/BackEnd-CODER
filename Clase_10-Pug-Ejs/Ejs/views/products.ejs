@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+  <body>
+    <%- include('templates/nav'); -%>
+
+    <div class="container border my-5">
+      <h1>Product List</h1>
+      <ul>
+        <% data.forEach(function(pr) { %>
+        <li><%= pr.name %> - price:<%pr.price %></li>
+        <% }) %>
+      </ul>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>

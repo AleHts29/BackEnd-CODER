@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+
+  <body>
+    <%- include('templates/nav'); -%>
+    <div class="container contApp my-5">
+      <div class="jumbotron text-center border-bottom my-3">
+        <h1 class="display-4">Product List</h1>
+        <p class="lead">Current product stock</p>
+      </div>
+
+      <% if(items){ %>
+      <ul>
+        <% data.forEach(element => { %>
+        <li><%= element.name %></li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>
