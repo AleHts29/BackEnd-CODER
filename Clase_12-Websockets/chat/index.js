@@ -9,7 +9,7 @@ const http = require("http");
 const server = http.createServer(app);
 const router = require("./routes/index");
 
-const port = 8083;
+const port = process.env.PORT || 8083;
 
 let msn = [];
 
