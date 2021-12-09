@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+
+  <style>
+    label {
+      padding-right: 10px;
+      font-size: 1rem;
+    }
+  </style>
+
+  <body>
+    <%- include('templates/nav'); -%>
+    <div class="container contApp my-5">
+      <div class="jumbotron text-center border-bottom my-3">
+        <h1 class="display-4">Welcome to the App HTs - Store</h1>
+        <p class="lead">This aplication is for administration users</p>
+      </div>
+      <!-- Meter -->
+      <div>
+        <h1><%= data.titulo %></h1>
+
+        <label for="fuel">Fuel level:</label>
+        <meter
+          min="<%= data.min %>"
+          max="<%= data.max %>"
+          value="<%= data.nivel %>"
+        ></meter>
+      </div>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>

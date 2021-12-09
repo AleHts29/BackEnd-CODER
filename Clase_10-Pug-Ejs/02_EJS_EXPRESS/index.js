@@ -2,7 +2,7 @@ const express = require("express");
 let arr = require("./data/index");
 
 const app = express();
-const port = 8083;
+const port = 8280;
 
 // seteo el motro de plantillas
 app.set("view engine", "ejs");
@@ -39,6 +39,13 @@ app.get("/", (req, res) => {
 
 app.get("/form", (req, res) => {
   res.render("form");
+});
+
+// http://localhost:8280/datos?min=10&nivel=15&max=20&titulo=Medidor
+app.get("/datos", (req, res) => {
+  console.log(req.query);
+  let { min, nivel, max, titulo } = req.query;
+  res.render("meter", { data: { min, nivel, max, titulo } });
 });
 
 app.get("/products", (req, res) => {
