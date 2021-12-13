@@ -35,13 +35,13 @@
     "id": 7
   },
   {
-    "name": "new",
+    "name": "Auriculares - Sony ",
     "price": "45",
     "id": 8
   },
   {
-    "name": "new",
-    "price": "45",
+    "name": "Auriculares - pepito",
+    "price": "400",
     "id": 9
   },
   {
@@ -50,48 +50,18 @@
     "id": 10
   },
   {
-    "name": "Auriculares - JBL ",
-    "price": "400",
+    "name": "Auriculares - Sony ",
+    "price": "45",
     "id": 11
   },
   {
-    "name": "Auriculares - pepito",
-    "price": "3",
+    "name": "new",
+    "price": "45",
     "id": 12
   },
   {
-    "name": "krk",
-    "price": "450",
+    "name": "Auriculares - pepito",
+    "price": "400",
     "id": 13
-  },
-  {
-    "name": "new",
-    "price": "45",
-    "id": 14
-  },
-  {
-    "name": "KRK",
-    "price": "450",
-    "id": 15
-  },
-  {
-    "name": "Auriculares - JBL ",
-    "price": "250",
-    "id": 16
-  },
-  {
-    "name": "new",
-    "price": "45",
-    "id": 17
-  },
-  {
-    "name": "new",
-    "price": "400",
-    "id": 18
-  },
-  {
-    "name": "new",
-    "price": "400",
-    "id": 19
   }
 ]

@@ -1,8 +1,12 @@
 const express = require("express");
+const moment = require("moment");
 // let arr = require("./data/index");
 
 const app = express();
-const port = process.env.PORT || 8094;
+const port = process.env.PORT || 8084;
+
+// Fecha
+let date = moment().format("DD/MM/YYYY hh:mm:ss");
 
 // set HTTP
 const http = require("http");
@@ -11,6 +15,8 @@ const server = http.createServer(app);
 const productsRoutes = require("./routes/products");
 const crudRoutes = require("./routes/newProducts");
 const auxProduct = require("./src/data/newProducts");
+
+let msn = [];
 
 // set Socket
 const { Server } = require("socket.io");
@@ -33,18 +39,30 @@ io.on("connection", (socket) => {
   if (auxProduct) {
     io.sockets.emit("message_back", auxProduct);
   }
-
+  if (msn) {
+    io.sockets.emit("chat_back", msn);
+  }
   // mensaje del cliente cuando envia un nuevo item desde New items
   socket.on("message_client", (data) => {
     console.log(data);
   });
 
-  // escucha cliente
+  // escucha cliente alta de productos
   socket.on("dataProduct", (data) => {
     auxProduct.push(data);
     console.log(auxProduct);
     // le responde a todos los usuarios conectados a New items
     io.sockets.emit("message_back", auxProduct);
+  });
+
+  // escuchar chat cliente
+  socket.on("dataMsn", (data) => {
+    data.date = date;
+    msn.push(data);
+    console.log(msn);
+
+    // Coneccion Chat con socket
+    io.sockets.emit("chat_back", msn);
   });
 
   // io.sockets.emit("message_back", "soy el back!!..");

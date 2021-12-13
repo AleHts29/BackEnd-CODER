@@ -1,0 +1,38 @@
+<!-- form -->
+<div class="container border bgForm text-center rounded">
+    <form onsubmit="return infoChat()">
+      <div class="my-3">
+        <fieldset disabled>
+          <input
+          type="email"    
+          id="nameUser"
+          name="nombre"
+          placeholder="email"
+          value=""
+        />
+        </fieldset>
+        
+      </div>
+      <div class="mb-3">
+          <!-- Mensajes Chat -->
+    <div id="scrollBox" class="container bgChat my-3  shadow p-3 rounded" >
+        <div id="chatBox">
+            <!-- <p>Hola.. Aqui van los mensajes del chat</p>
+            <p>Hola.. Aqui van los mensajes del chat</p>
+            <p>Hola.. Aqui van los mensajes del chat</p> -->
+            
+        </div>
+      </div>
+       
+        <input
+          type="text"
+          placeholder="Message"
+          name="mensaje"
+          id="messageUser"
+          class="col-4"
+        ></input>
+        <button type="submit" class="btn btn-primary ml-5">Enviar</button>
+      </div>
+      
+    </form>
+  </div>

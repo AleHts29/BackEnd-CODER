@@ -7,6 +7,16 @@
       font-size: 3rem;
       color: whitesmoke;
     }
+    .bgForm {
+      width: 65%;
+      background: #6c757d;
+    }
+
+    .bgChat {
+      height: 200px;
+      overflow: scroll;
+      background: #d6eff3;
+    }
   </style>
 
   <body>
@@ -23,6 +33,9 @@
         <div id="containerProducts"></div>
       </div>
     </div>
+
+    <!-- Chat -->
+    <div class="container"><%- include('components/chatComponent') %></div>
 
     <!-- Footer -->
     <div class="bg-dark"><%- include('./templates/footer'); -%></div>
