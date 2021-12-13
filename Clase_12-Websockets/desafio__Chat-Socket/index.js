@@ -10,6 +10,7 @@ const server = http.createServer(app);
 
 const productsRoutes = require("./routes/products");
 const crudRoutes = require("./routes/crud");
+const auxProduct = require("./src/data/newProducts");
 
 // set Socket
 const { Server } = require("socket.io");
@@ -28,11 +29,25 @@ app.use(express.static(__dirname + "/public"));
 io.on("connection", (socket) => {
   console.log("Cliente conectado!..");
 
+  // se envia lista de los items nuevos
+  if (auxProduct) {
+    io.sockets.emit("message_back", auxProduct);
+  }
+
+  // mensaje del cliente cuando envia un nuevo item desde New items
   socket.on("message_client", (data) => {
     console.log(data);
   });
 
-  io.sockets.emit("message_back", "soy el back!!..");
+  // escucha cliente
+  socket.on("dataProduct", (data) => {
+    auxProduct.push(data);
+    console.log(auxProduct);
+    // le responde a todos los usuarios conectados a New items
+    io.sockets.emit("message_back", auxProduct);
+  });
+
+  // io.sockets.emit("message_back", "soy el back!!..");
 });
 
 app.use("/api/products", productsRoutes);

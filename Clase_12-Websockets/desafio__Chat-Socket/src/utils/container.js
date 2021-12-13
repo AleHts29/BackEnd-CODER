@@ -38,6 +38,7 @@ class Contenedor {
       let dataFile = JSON.parse(fileExits);
       product.id = dataFile.length + 1;
       dataFile.push(product);
+
       this.producto = dataFile;
       writeFileAsync(this.producto);
     } else {
