@@ -9,7 +9,7 @@ const http = require("http");
 const server = http.createServer(app);
 
 const productsRoutes = require("./routes/products");
-const crudRoutes = require("./routes/crud");
+const crudRoutes = require("./routes/newProducts");
 const auxProduct = require("./src/data/newProducts");
 
 // set Socket

@@ -3,10 +3,10 @@ const socket = io();
 socket.on("message_back", (data) => {
   console.log(data);
   render(data);
-
   socket.emit("message_client", "Hey!!.. i am theClient.");
 });
 
+// FUNCION - renderiza los nuevos items
 const render = (data) => {
   const html = data
     .map((item) => {
@@ -42,30 +42,27 @@ const render = (data) => {
   document.querySelector("#containerProducts").innerHTML = html;
 };
 
-// Funcion para capturar info del formulario
+// FUNCION - capturar info del formulario
 const addItem = () => {
   // Validar campos
   const name = document.querySelector("#productName").value;
   const price = document.querySelector("#productPrice").value;
 
-  let dataObj = {
-    name: name,
-    price: price,
-  };
-
   if (name.trim() === "" || price.trim() === "") {
+    // mostrar mensaje de error
     document.querySelector(
       "#containerProducts"
     ).innerHTML = `<div class="alert alert-warning" role="alert"> <p> No se cargo ningun producto</p></div>`;
     return false;
   }
 
-  // mostrar mensaje de exito/error
+  let dataObj = {
+    name: name,
+    price: price,
+  };
 
-  // actaulizar lista de productos
+  // La actualizacion del archivo products.txt se ejecuta desde el formulario(productComponent.ejs) mediante un POST al path /newitem en newProducts.js
 
   // Se envian datos al back
   socket.emit("dataProduct", dataObj);
-
-  //   return false;
 };
