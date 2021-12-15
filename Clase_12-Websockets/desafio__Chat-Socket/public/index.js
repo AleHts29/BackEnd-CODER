@@ -122,11 +122,20 @@ const renderChat = (data) => {
   let html = data
     .map((x) => {
       return `
-            <p><b style='color:#2a6f97'>${x.nameUser}</b> <span style='color:#a47148'>[${x.date}]</span>: <span style='color:#81b29a'>${x.msnUser}</span></p>
+            <div class="containerChat darker">
+              <b class="userName-left">${x.nameUser}</b>
+              <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="right" style="width:100%;">
+              <p><span style='color:#81b29a'>${x.msnUser}</span></p>
+              <span class="time-right"><span style='color:#a47148'>${x.date}</span></span>
+            </div>
             `;
     })
     .join("");
   document.querySelector("#chatBox").innerHTML = html;
+
+  // Mantiene scroll abajo
+  let scrollBox = document.querySelector("#scrollBox");
+  scrollBox.scrollTop = scrollBox.scrollHeight;
 };
 
 // capturar info de chatComponent
@@ -134,6 +143,7 @@ const infoChat = () => {
   let dataObj = {
     nameUser: document.querySelector("#nameUser").value,
     msnUser: document.querySelector("#messageUser").value,
+    send: true,
   };
   //   console.log(dataObj);
   // envio los datos al back

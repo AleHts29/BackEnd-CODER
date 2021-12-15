@@ -63,5 +63,15 @@
     "name": "Auriculares - pepito",
     "price": "400",
     "id": 13
+  },
+  {
+    "name": "Auriculares - Sony ",
+    "price": "400",
+    "id": 14
+  },
+  {
+    "name": "new",
+    "price": "45",
+    "id": 15
   }
 ]
