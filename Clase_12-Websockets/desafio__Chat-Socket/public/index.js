@@ -121,7 +121,8 @@ $("#formProduct").bind("submit", function () {
 const renderChat = (data) => {
   let html = data
     .map((x) => {
-      return `
+      if (userChat == x.nameUser) {
+        return `
             <div class="containerChat darker">
               <b class="userName-left">${x.nameUser}</b>
               <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="right" style="width:100%;">
@@ -129,6 +130,16 @@ const renderChat = (data) => {
               <span class="time-right"><span style='color:#a47148'>${x.date}</span></span>
             </div>
             `;
+      } else {
+        return `
+            <div class="containerChat">
+              <b class="userName-right">${x.nameUser}</b>
+              <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="" style="width:100%;">
+              <p><span style='color:#81b29a'>${x.msnUser}</span></p>
+              <span class="time-left"><span style='color:#a47148'>${x.date}</span></span>
+            </div>
+            `;
+      }
     })
     .join("");
   document.querySelector("#chatBox").innerHTML = html;
