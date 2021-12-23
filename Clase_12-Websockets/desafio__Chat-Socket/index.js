@@ -62,7 +62,7 @@ io.on("connection", (socket) => {
     data.date = date;
     msn.push(data);
 
-    // se agrega el nuevo elemento al archivo.txt
+    // se agrega mensaje nuevo al archivo chatData.txt
     ChatData.save(data);
     // console.log(data);
 
