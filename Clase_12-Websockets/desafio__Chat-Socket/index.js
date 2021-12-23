@@ -1,9 +1,11 @@
 const express = require("express");
 const moment = require("moment");
+const ClassContainer = require("./src/utils/container.js");
+const ChatData = new ClassContainer("./src/data/chatData.txt");
 // let arr = require("./data/index");
 
 const app = express();
-const port = process.env.PORT || 8084;
+const port = process.env.PORT || 8080;
 
 // Fecha
 let date = moment().format("DD/MM/YYYY hh:mm:ss");
@@ -59,7 +61,10 @@ io.on("connection", (socket) => {
   socket.on("dataMsn", (data) => {
     data.date = date;
     msn.push(data);
-    console.log(msn);
+
+    // se agrega el nuevo elemento al archivo.txt
+    ChatData.save(data);
+    // console.log(data);
 
     // Coneccion Chat con socket
     io.sockets.emit("chat_back", msn);

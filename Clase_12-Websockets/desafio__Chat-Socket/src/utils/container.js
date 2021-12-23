@@ -1,12 +1,8 @@
 const fs = require("fs");
 
-const writeFileAsync = async (arr) => {
+const writeFileAsync = async (arr, path) => {
   try {
-    await fs.promises.writeFile(
-      "./src/data/products.txt",
-      JSON.stringify(arr, null, 2),
-      "utf-8"
-    );
+    await fs.promises.writeFile(path, JSON.stringify(arr, null, 2), "utf-8");
   } catch (err) {
     throw new Error("Error de escritura!");
   }
@@ -40,12 +36,12 @@ class Contenedor {
       dataFile.push(product);
 
       this.producto = dataFile;
-      writeFileAsync(this.producto);
+      writeFileAsync(this.producto, this.nameFile);
     } else {
       // Si el archivo esta vacio, le asigno un id y lo agrego.
       product.id = 1;
       this.producto.push(product);
-      writeFileAsync(this.producto);
+      writeFileAsync(this.producto, this.nameFile);
     }
   }
 
@@ -93,7 +89,7 @@ class Contenedor {
       const deleteItem = dataFile.splice(positionItem, 1);
 
       // Actualizo el archivo
-      writeFileAsync(dataFile);
+      writeFileAsync(dataFile, this.nameFile);
       return "Productos eliminado de forma correcta!..";
     } else {
       return "No se pudo eliminar!";
@@ -102,7 +98,7 @@ class Contenedor {
 
   // Metodo deleteAll(Number)
   async deleteAll() {
-    writeFileAsync(this.producto);
+    writeFileAsync(this.producto, this.nameFile);
   }
 
   // Metodo updateById(id, prodcut)
@@ -122,21 +118,12 @@ class Contenedor {
         }
         return item;
       });
-      writeFileAsync(auxUpdateProducts);
+      writeFileAsync(auxUpdateProducts, this.nameFile);
       return "Producto actualizado de forma correcta!..";
     } else {
       return "No se pudo actualizar!";
     }
   }
 }
-
-// let container = new Contenedor();
-
-// Ejecucion de metodos
-// c.save(newDatos);
-// container.getById(3);
-// container.getAll();
-// c.deleteById(2);
-// c.deleteAll()
 
 module.exports = Contenedor;

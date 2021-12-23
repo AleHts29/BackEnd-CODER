@@ -1,0 +1,9 @@
+[
+  {
+    "nameUser": "Ale@gmail.com",
+    "msnUser": "Hola, como estas?",
+    "send": true,
+    "date": "22/12/2021 10:12:11",
+    "id": 1
+  }
+]

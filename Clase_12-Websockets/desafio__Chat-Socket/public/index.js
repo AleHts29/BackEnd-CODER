@@ -125,18 +125,23 @@ const renderChat = (data) => {
         return `
             <div class="containerChat darker">
               <b class="userName-left">${x.nameUser}</b>
-              <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="right" style="width:100%;">
-              <p><span style='color:#81b29a'>${x.msnUser}</span></p>
-              <span class="time-right"><span style='color:#a47148'>${x.date}</span></span>
+              <div class='container'>
+                <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="right" style="width:100%;">
+                <p><span style='color:#81b29a'>${x.msnUser}</span></p>
+                <span class="time-right"><span style='color:#a47148'>${x.date}</span></span>
+              </div>
             </div>
             `;
       } else {
         return `
             <div class="containerChat">
               <b class="userName-right">${x.nameUser}</b>
-              <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="" style="width:100%;">
-              <p><span style='color:#81b29a'>${x.msnUser}</span></p>
-              <span class="time-left"><span style='color:#a47148'>${x.date}</span></span>
+              <div class='container'>
+                <img src="https://elcomercio.pe/resizer/pCJZe8wVijJdgWkHAVMqc_Bzf8c=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/Y4EYBHSSDRDAHBAJT3KDBK6R3Y.jpg" alt="Avatar" class="" style="width:100%;">
+                <p><span style='color:#81b29a'>${x.msnUser}</span></p>
+                <span class="time-left"><span style='color:#a47148'>${x.date}</span></span>
+              </div>
+              
             </div>
             `;
       }
@@ -150,16 +155,15 @@ const renderChat = (data) => {
 };
 
 // capturar info de chatComponent
-const infoChat = () => {
+// const infoChat = () => {
+$("#formChat").bind("submit", function () {
   let dataObj = {
     nameUser: document.querySelector("#nameUser").value,
     msnUser: document.querySelector("#messageUser").value,
-    send: true,
   };
-  //   console.log(dataObj);
+
   // envio los datos al back
   socket.emit("dataMsn", dataObj);
-  //   $("#chatBox").animate({ scrollTop: $("#chatBox")[0].scrollHeight }, 1000); // Scrollea hasta abajo del div, el id debe ser del div que tiene la barra de scrolleo
   document.querySelector("#messageUser").value = "";
   return false;
-};
+});
