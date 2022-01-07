@@ -1,0 +1,62 @@
+[
+  {
+    "name": "new producto",
+    "price": 250,
+    "id": 1
+  },
+  {
+    "name": "Auriculares AKG240",
+    "price": 210,
+    "id": 2
+  },
+  {
+    "name": "Monitores KRK",
+    "price": 457,
+    "id": 3
+  },
+  {
+    "name": "Microfono Hyperx",
+    "price": 89,
+    "id": 4
+  },
+  {
+    "name": "Placa de sonido Focus Ride Scarlett",
+    "price": 140,
+    "id": 5
+  },
+  {
+    "name": "Korg Ms20 Mini Sintetizador Analógico Monofónico",
+    "price": 590,
+    "id": 6
+  },
+  {
+    "name": "Auriculares - Sony ",
+    "price": "400",
+    "id": 7
+  },
+  {
+    "name": "Auriculares - pepito",
+    "price": "45",
+    "id": 8
+  },
+  {
+    "name": "new",
+    "price": "45",
+    "id": 9
+  },
+  {
+    "name": "Auriculares - JBL ",
+    "price": "15",
+    "id": 10
+  },
+  {
+    "name": "new Product",
+    "price": "35",
+    "id": 11
+  },
+  {
+    "name": "new Product",
+    "price": "400",
+    "id": 12
+  }
+]

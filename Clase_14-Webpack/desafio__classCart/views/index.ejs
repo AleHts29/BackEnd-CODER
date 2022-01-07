@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('templates/header'); -%>
+  <style>
+    img {
+      opacity: 0.9;
+      width: 70%;
+      height: auto;
+    }
+  </style>
+  <body>
+    <%- include('templates/nav'); -%>
+    <div class="container contApp my-5">
+      <div class="jumbotron text-center border-bottom my-3">
+        <h1 class="display-4">Welcome to the App HTs - Store</h1>
+        <p class="lead">This aplication is for administration users</p>
+      </div>
+      <div class="row my-5">
+        <div class="col">
+          <img
+            class="mx-auto d-block"
+            src="https://images.unsplash.com/photo-1563819886509-b1a8665118ad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1153&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+  </body>
+</html>
