@@ -5,7 +5,7 @@ const ChatData = new ClassContainer("./src/data/chatData.txt");
 // let arr = require("./data/index");
 
 const app = express();
-const port = process.env.PORT || 8088;
+const port = process.env.PORT || 8080;
 
 // Fecha
 let date = moment().format("DD/MM/YYYY hh:mm:ss");

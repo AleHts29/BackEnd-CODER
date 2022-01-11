@@ -61,7 +61,7 @@ router.get("/:id", async (req, res) => {
 
 // puente para pase de parametro y realizar una busqueda por id ---> viene de buscador.ejs
 router.post("/", async (req, res) => {
-  // se capturan el id de la --> vista form.ejs
+  // se capturan el id de la --> vista buscador.ejs
   let id = req.body.id;
   // se redireciona al patch /api/products/id
   res.redirect("/api/products/" + id);
