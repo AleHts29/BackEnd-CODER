@@ -45,6 +45,21 @@ router.get("/:id", async (req, res) => {
   res.render("productList", { data: [dataFIle], items: true });
 });
 
+router.get("/update/:id", async (req, res) => {
+  //   res.sendFile(__dirname + "/public/form.html");
+  let { id } = req.params;
+  let dataFIle = await Container.getById(id);
+  if (dataFIle == "NULL") {
+    return res.render("update", {
+      MSG_NOT_FOUNT: "ID not found..",
+      items: false,
+    });
+  }
+  console.log(dataFIle);
+  // Se muestra renderizado el producto buscado
+  res.render("update", { data: [dataFIle], items: true });
+});
+
 // router.post("/", async (req, res) => {
 //   // se capturan los datos que se ingresan en el formulario --> vista form.ejs
 //   let newProduct = req.body;
@@ -59,12 +74,20 @@ router.get("/:id", async (req, res) => {
 //   // res.render("products", { data: [newProduct], items: true });
 // });
 
-// puente para pase de parametro y realizar una busqueda por id ---> viene de buscador.ejs
+// PUENTE para pase de parametro y realizar una busqueda por id ---> viene de buscador.ejs
 router.post("/", async (req, res) => {
   // se capturan el id de la --> vista buscador.ejs
   let id = req.body.id;
   // se redireciona al patch /api/products/id
   res.redirect("/api/products/" + id);
+});
+
+// PUENTE
+router.post("/update/", async (req, res) => {
+  // se capturan el id de la --> vista buscador.ejs
+  let id = req.body.id;
+  // se redireciona al patch /api/products/id
+  res.redirect("/api/products/update/" + id);
 });
 
 router.post("/update", async (req, res) => {
@@ -84,16 +107,20 @@ router.post("/update", async (req, res) => {
 // se debe poder buscar un item y modificarlo
 
 router.put("/update/:id", async (req, res) => {
+  console.log("Hola soy un PUT");
+  console.log(req.params.id);
+
   let { id } = req.params;
+  let { newName, newPrice } = req.body;
 
   let dataFIle = await Container.getById(id);
 
   if (dataFIle == "NULL") {
     return res.send({ MSG: "No se encuentra el id.." });
   }
-  let newData = req.body;
+  let newData = { name: newName, price: newPrice };
   let upDateItem = await Container.updateById(id, newData);
-  res.send(upDateItem);
+  res.redirect("/api/products/update");
 });
 
 // **FALTA**

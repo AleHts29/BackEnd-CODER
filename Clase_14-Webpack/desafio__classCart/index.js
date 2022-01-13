@@ -1,11 +1,13 @@
 const express = require("express");
 const moment = require("moment");
+const methodOverride = require("method-override");
+
 const ClassContainer = require("./src/utils/container.js");
 const ChatData = new ClassContainer("./src/data/chatData.txt");
 // let arr = require("./data/index");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8082;
 
 // Fecha
 let date = moment().format("DD/MM/YYYY hh:mm:ss");
@@ -33,6 +35,7 @@ app.set("views", "./views");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method", { methods: ["POST", "GET"] }));
 
 // Socket connection
 io.on("connection", (socket) => {
@@ -82,6 +85,11 @@ app.use("/newitem", newProductRoutes);
 // main page
 app.get("/", (req, res) => {
   res.render("index.ejs");
+});
+
+// ERROR page
+app.all("*", (req, res) => {
+  res.status(404).send("Error: not found page");
 });
 
 server.listen(port, () => {

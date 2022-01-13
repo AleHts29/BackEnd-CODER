@@ -1,7 +1,7 @@
 [
   {
-    "name": "new producto",
-    "price": 250,
+    "name": "Auricular JBL",
+    "price": "60",
     "id": 1
   },
   {
@@ -15,8 +15,8 @@
     "id": 3
   },
   {
-    "name": "Microfono Hyperx",
-    "price": 89,
+    "name": "new Prod 4",
+    "price": "4000",
     "id": 4
   },
   {
@@ -58,5 +58,10 @@
     "name": "new Product",
     "price": "400",
     "id": 12
+  },
+  {
+    "name": "Auriculares - pepito",
+    "price": "3",
+    "id": 13
   }
 ]

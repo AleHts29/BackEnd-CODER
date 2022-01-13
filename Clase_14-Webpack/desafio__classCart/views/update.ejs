@@ -6,14 +6,23 @@
     <%- include('templates/nav'); -%>
     <div class="container contApp my-5">
       <!-- Se renderizan los items que se encuentran en el archivo.txt -->
-      <div class="row justify-content-center">
-        <div class="mb-5">
-          <!-- Se agrega un formulario como componente -->
-          <%- include('components/updateComponent'); -%>
-        </div>
 
-        <!-- Aqui se renderizan los nuevos items -->
-        <div id="containerProducts"></div>
+      <div>
+        <!-- Se agrega un buscador como componente -->
+        <%- include('components/searchUpdateComponent') -%> <% if(items){ %>
+        <!-- Se agrega lista de productos como componente -->
+        <%- include('components/productListUpdateComponent') -%>
+
+        <!-- Se agrega un formulario como componente -->
+        <!-- Muestra campos de actualizacion solo si se realizo la busqueda de un item -->
+        <%- include('components/updateComponent') -%> <% } else {%>
+        <div>
+          <h1></h1>
+          <div class="alert alert-warning" role="alert">
+            <%= MSG_NOT_FOUNT %>
+          </div>
+        </div>
+        <% }%>
       </div>
     </div>
 
@@ -21,7 +30,7 @@
     <div class="container"><%- include('components/chatComponent') %></div>
 
     <!-- Footer -->
-    <div class="bg-dark"><%- include('./templates/footer'); -%></div>
+    <div class="bg-dark"><%- include('./templates/footer') -%></div>
 
     <!-- Configuraciones -->
     <script src="/socket.io/socket.io.js"></script>
