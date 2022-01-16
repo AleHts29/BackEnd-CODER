@@ -29,6 +29,16 @@ router.get("/update", async (req, res) => {
   res.render("update", { data: dataFIle, items: true });
 });
 
+router.get("/delete", async (req, res) => {
+  let dataFIle = await Container.getAll();
+  if (Object.keys(dataFIle).length === 0) {
+    return res.send({ MSG: "El archivo se encuentra vacio..", items: false });
+  }
+  //   se renderiza la vista products.ejs con los datos que se obtuvieron del archivo.txt
+  // console.log(dataFIle);
+  res.render("delete", { data: dataFIle, items: true });
+});
+
 // http://localhost:8090/api/products/6 --> Por medio de un id devuelve el producto.
 router.get("/:id", async (req, res) => {
   //   res.sendFile(__dirname + "/public/form.html");
@@ -58,6 +68,21 @@ router.get("/update/:id", async (req, res) => {
   console.log(dataFIle);
   // Se muestra renderizado el producto buscado
   res.render("update", { data: [dataFIle], items: true });
+});
+
+router.get("/delete/:id", async (req, res) => {
+  //   res.sendFile(__dirname + "/public/form.html");
+  let { id } = req.params;
+  let dataFIle = await Container.getById(id);
+  if (dataFIle == "NULL") {
+    return res.render("delete", {
+      MSG_NOT_FOUNT: "ID not found..",
+      items: false,
+    });
+  }
+  console.log(dataFIle);
+  // Se muestra renderizado el producto buscado
+  res.render("delete", { data: [dataFIle], items: true });
 });
 
 // router.post("/", async (req, res) => {
@@ -90,17 +115,25 @@ router.post("/update/", async (req, res) => {
   res.redirect("/api/products/update/" + id);
 });
 
-router.post("/update", async (req, res) => {
-  let newProduct = req.body;
-
-  // se agrega el nuevo elemento al archivo.txt
-  await Container.save(newProduct);
-
-  // se capturan el id de la --> vista form.ejs
+// PUENTE
+router.post("/delete/", async (req, res) => {
+  // se capturan el id de la --> vista buscador.ejs
   let id = req.body.id;
   // se redireciona al patch /api/products/id
-  res.redirect("/api/products/update/" + id);
+  res.redirect("/api/products/delete/" + id);
 });
+
+// router.post("/update", async (req, res) => {
+//   let newProduct = req.body;
+
+//   // se agrega el nuevo elemento al archivo.txt
+//   await Container.save(newProduct);
+
+//   // se capturan el id de la --> vista form.ejs
+//   let id = req.body.id;
+//   // se redireciona al patch /api/products/id
+//   res.redirect("/api/products/update/" + id);
+// });
 
 // **Update**
 // desarrollar Componente - vista de renderizado
@@ -126,7 +159,10 @@ router.put("/update/:id", async (req, res) => {
 // **FALTA**
 // desarrollar Componente - vista de renderizado
 // se debe poder buscar un item y eliminarlo
-router.delete("/:id", async (req, res) => {
+router.delete("/delete/:id", async (req, res) => {
+  console.log("Hola soy un DELETE");
+  console.log(req.params.id);
+
   let { id } = req.params;
   let dataFIle = await Container.getById(id);
 
@@ -134,7 +170,7 @@ router.delete("/:id", async (req, res) => {
     return res.send({ MSG: "No se encuentra el id.." });
   }
   let returnData = await Container.deleteById(id);
-  res.send(returnData);
+  res.redirect("/api/products/delete");
 });
 
 module.exports = router;
