@@ -35,8 +35,8 @@
     "id": 7
   },
   {
-    "name": "new",
-    "price": "45",
+    "name": "new Prod",
+    "price": "3500",
     "id": 8
   }
 ]
