@@ -16,13 +16,16 @@
       </p>
       <p><b>price: <%= element.price %></b></p>
       <p><b>ID: <%= element.id %></b></p>
-      <button
-        id="<%= element.id %>"
-        onclick="agregarAlCarrito(id)"
-        class="btn btn-primary"
+
+      <form
+        id="formProduct"
+        action="/api/products/update/<%= element.id %>"
+        method="GET"
       >
-        Update
-      </button>
+        <div class="col text-center">
+          <button type="submit" class="btn btn-dark mt-3">Update</button>
+        </div>
+      </form>
     </div>
   </div>
   <!-- </div> -->

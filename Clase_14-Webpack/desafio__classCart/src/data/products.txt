@@ -33,5 +33,10 @@
     "name": "Auriculares - Sony ",
     "price": "400",
     "id": 7
+  },
+  {
+    "name": "product prueba",
+    "price": "3500",
+    "id": 8
   }
 ]
