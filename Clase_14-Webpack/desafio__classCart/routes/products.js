@@ -85,20 +85,6 @@ router.get("/delete/:id", async (req, res) => {
   res.render("delete", { data: [dataFIle], items: true });
 });
 
-// router.post("/", async (req, res) => {
-//   // se capturan los datos que se ingresan en el formulario --> vista form.ejs
-//   let newProduct = req.body;
-//   if (newProduct.name == "" || newProduct.price == "") {
-//     return res.send({ Error: "No se cargo ningun producto.." });
-//   }
-//   // se agrega el nuevo elemento al archivo.txt
-//   await Container.save(newProduct);
-
-//   // se redireciona al patch /api/products
-//   res.redirect("/api/products");
-//   // res.render("products", { data: [newProduct], items: true });
-// });
-
 // PUENTE para pase de parametro y realizar una busqueda por id ---> viene de buscador.ejs
 router.post("/", async (req, res) => {
   // se capturan el id de la --> vista buscador.ejs
@@ -122,18 +108,6 @@ router.post("/delete/", async (req, res) => {
   // se redireciona al patch /api/products/id
   res.redirect("/api/products/delete/" + id);
 });
-
-// router.post("/update", async (req, res) => {
-//   let newProduct = req.body;
-
-//   // se agrega el nuevo elemento al archivo.txt
-//   await Container.save(newProduct);
-
-//   // se capturan el id de la --> vista form.ejs
-//   let id = req.body.id;
-//   // se redireciona al patch /api/products/id
-//   res.redirect("/api/products/update/" + id);
-// });
 
 // **Update**
 // desarrollar Componente - vista de renderizado
