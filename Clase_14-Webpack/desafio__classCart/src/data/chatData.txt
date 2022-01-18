@@ -35,5 +35,11 @@
     "msnUser": "Hola",
     "date": "16/01/2022 11:46:01",
     "id": 6
+  },
+  {
+    "nameUser": "ale@gmail.com",
+    "msnUser": "Hola, como estas?",
+    "date": "16/01/2022 11:46:01",
+    "id": 7
   }
 ]
