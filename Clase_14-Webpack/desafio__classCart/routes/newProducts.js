@@ -12,8 +12,13 @@ router.use(express.urlencoded({ extended: false }));
 // let auxProduct = [];
 
 router.get("/", (req, res) => {
-  //   res.render("form", { data: auxProduct, items: true });
-  res.render("newItem");
+  // validacion temporal
+  if (req.query.admin === "admin") {
+    //   res.render("form", { data: auxProduct, items: true });
+    res.render("newItem");
+  } else {
+    res.send("No esta autorizado");
+  }
 });
 
 router.post("/", async (req, res) => {

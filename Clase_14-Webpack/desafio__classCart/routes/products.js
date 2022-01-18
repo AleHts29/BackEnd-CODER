@@ -20,23 +20,33 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/update", async (req, res) => {
-  let dataFIle = await Container.getAll();
-  if (Object.keys(dataFIle).length === 0) {
-    return res.send({ MSG: "El archivo se encuentra vacio..", items: false });
+  // validacion temporal
+  if (req.query.admin === "admin") {
+    let dataFIle = await Container.getAll();
+    if (Object.keys(dataFIle).length === 0) {
+      return res.send({ MSG: "El archivo se encuentra vacio..", items: false });
+    }
+    //   se renderiza la vista products.ejs con los datos que se obtuvieron del archivo.txt
+    // console.log(dataFIle);
+    res.render("update", { data: dataFIle, items: true });
+  } else {
+    res.send("No esta autorizado");
   }
-  //   se renderiza la vista products.ejs con los datos que se obtuvieron del archivo.txt
-  // console.log(dataFIle);
-  res.render("update", { data: dataFIle, items: true });
 });
 
 router.get("/delete", async (req, res) => {
-  let dataFIle = await Container.getAll();
-  if (Object.keys(dataFIle).length === 0) {
-    return res.send({ MSG: "El archivo se encuentra vacio..", items: false });
+  // validacion temporal
+  if (req.query.admin === "admin") {
+    let dataFIle = await Container.getAll();
+    if (Object.keys(dataFIle).length === 0) {
+      return res.send({ MSG: "El archivo se encuentra vacio..", items: false });
+    }
+    //   se renderiza la vista products.ejs con los datos que se obtuvieron del archivo.txt
+    // console.log(dataFIle);
+    res.render("delete", { data: dataFIle, items: true });
+  } else {
+    res.send("No esta autorizado");
   }
-  //   se renderiza la vista products.ejs con los datos que se obtuvieron del archivo.txt
-  // console.log(dataFIle);
-  res.render("delete", { data: dataFIle, items: true });
 });
 
 // http://localhost:8090/api/products/6 --> Por medio de un id devuelve el producto.
