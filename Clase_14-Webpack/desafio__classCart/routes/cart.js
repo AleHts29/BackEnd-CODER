@@ -5,6 +5,8 @@
 // producto. Esta aplicación de frontend debe enviar los requests get, post, put y delete al
 // servidor utilizando fetch y debe estar ofrecida en su espacio público.
 
+// https://www.youtube.com/watch?v=aKPcs-EIzZI&ab_channel=LeonidasEsteban
+
 const express = require("express");
 const moment = require("moment");
 

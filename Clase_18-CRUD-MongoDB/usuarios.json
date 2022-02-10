@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "61f1ae5bb555e9cd8df5eb7f"
+  },
+  "nombre": "Alejandro",
+  "edad": 30
+},{
+  "_id": {
+    "$oid": "61f1b004b555e9cd8df5eb80"
+  },
+  "nombre": "Juan",
+  "edad": 39
+},{
+  "_id": {
+    "$oid": "61f1b07bb555e9cd8df5eb81"
+  },
+  "nombre": "Camilo",
+  "apellido": "Lindarte",
+  "email": "camilo@gmail.com",
+  "edad": 33
+},{
+  "_id": {
+    "$oid": "61f1b917e353c3a0ea58e63e"
+  },
+  "nombre": "Juan",
+  "apellido": "Acevedo",
+  "edad": 43
+},{
+  "_id": {
+    "$oid": "61f1e2bab555e9cd8df5eb83"
+  },
+  "nombre": "Alejandro"
+},{
+  "_id": {
+    "$oid": "61f1e32bb555e9cd8df5eb84"
+  },
+  "nombre": "Alejandro",
+  "email": "ahuertas@fi.uba.ar",
+  "date": {
+    "$date": "2022-01-27T00:11:23.922Z"
+  }
+}]
