@@ -36,6 +36,7 @@ app.use(express.static(__dirname + "/public"));
 // Socket connection
 io.on("connection", (socket) => {
   console.log("Cliente conectado!..");
+  io.sockets.emit("chat_back", msn);
 
   // se envia lista de los items nuevos
   if (auxProduct) {

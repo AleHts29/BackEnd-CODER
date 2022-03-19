@@ -24,6 +24,13 @@ if (document.querySelector("#nameUser").value == "") {
   `,
       input: "email",
       inputPlaceholder: "Enter your enmail",
+      // revisar codiggo de Mauricio comision 18335 - calse12
+      allowOutsideClick: false,
+      inputValidator: (value) => {
+        return !value && "Necesitas identificarte";
+      },
+    }).then((result) => {
+      user = result.value;
     });
 
     if (url) {
