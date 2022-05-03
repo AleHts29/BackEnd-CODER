@@ -1,6 +1,7 @@
 const { normalize, schema } = require("normalizr");
 const { comments } = require("./data");
 const originalData = require("./data");
+const originalDataEmpresa = require("./dataEmpresa");
 
 // Funcion para dar formato en consola
 const util = require("util");
@@ -17,8 +18,9 @@ const util = require("util");
 //   }
 // }
 
-const authorSchema = new schema.Entity("usuarios");
-const commentsSchema = new schema.Entity("commentsUsers", {
+// Normalizacion de data.js
+const authorSchema = new schema.Entity("users");
+const commentsSchema = new schema.Entity("comments", {
   commenter: authorSchema,
 });
 
@@ -29,8 +31,31 @@ const postSchema = new schema.Entity("posts", {
 
 const normalizeBlogs = normalize(originalData, postSchema);
 
-let print = (obj) => {
-  console.log(util.inspect(obj, false, 12, true));
+let print = (objeto) => {
+  console.log(util.inspect(objeto, false, 12, true));
 };
-
 print(normalizeBlogs);
+
+// Normalizacion de dataEmpresa.js
+const gerenteSchema = new schema.Entity("gerente");
+const encargadoSchema = new schema.Entity("encargado");
+const empleadosSchema = new schema.Entity("empleados", {
+  gerente: gerenteSchema,
+  encargado: encargadoSchema,
+});
+
+const empresaSchema = new schema.Entity("empresa", {
+  gerente: empleadosSchema,
+  encargado: empleadosSchema,
+  empleados: [empleadosSchema],
+});
+
+const normalizeEmpresa = normalize(originalDataEmpresa, empresaSchema);
+
+let print2 = (objeto) => {
+  console.log(util.inspect(objeto, false, 12, true));
+};
+print2(normalizeEmpresa);
+
+console.log(Object.keys(originalDataEmpresa).length);
+console.log(Object.keys(normalizeEmpresa).length);

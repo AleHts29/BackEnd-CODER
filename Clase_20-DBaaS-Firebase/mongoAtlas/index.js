@@ -15,13 +15,13 @@ const getAllUsers = async () => {
   const users = await Users.find();
   return users;
 };
-// getAllUsers()
-//   .then((res) => {
-//     console.log(res);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+getAllUsers()
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // SAVE
 const userSave = async (users) => {
@@ -32,6 +32,7 @@ const userSave = async (users) => {
       apellido: user.apellido,
       dni: user.dni,
     });
+
     newUser = addUser.save();
   });
   return newUser;
