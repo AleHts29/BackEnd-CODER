@@ -129,14 +129,3 @@ app.post(
 app.listen(8080, () => {
   console.log("Server ok");
 });
-
-let carrito = [
-  { nombre: Producto1, price: 400 },
-  { nombre: Producto2, price: 40 },
-  { nombre: Producto3, price: 390 },
-  { nombre: Producto4, price: 1200 },
-];
-
-for (let i = 0; i < carrito.length; i++) {
-  console.log(carrito[i]);
-}

@@ -1,0 +1,333 @@
+Statistical profiling result from isolate-bloq-v8.log, (42227 ticks, 8 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     10    0.0%          /usr/lib/system/libsystem_pthread.dylib
+      3    0.0%          /usr/lib/system/libsystem_malloc.dylib
+      3    0.0%          /usr/lib/system/libsystem_c.dylib
+      1    0.0%          /usr/lib/system/libsystem_platform.dylib
+      1    0.0%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      2    0.0%    0.0%  LazyCompile: *next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      2    0.0%    0.0%  LazyCompile: *fastparse /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/parseurl/index.js:95:20
+      1    0.0%    0.0%  RegExp: ^\/auth-bloq\/?$
+      1    0.0%    0.0%  RegExp: [^\t\x20-\x7e\x80-\xff]
+      1    0.0%    0.0%  LazyCompile: *hidden internal/errors.js:286:25
+
+ [C++]:
+   ticks  total  nonlib   name
+  41330   97.9%   97.9%  T node::crypto::PBKDF2(v8::FunctionCallbackInfo<v8::Value> const&)
+    451    1.1%    1.1%  t __ZN2v88internal11IdentityMapIjNS0_25FreeStoreAllocationPolicyEED0Ev
+    137    0.3%    0.3%  T node::native_module::NativeModuleEnv::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     41    0.1%    0.1%  T _getaudit
+     35    0.1%    0.1%  t node::fs::Read(v8::FunctionCallbackInfo<v8::Value> const&)
+     27    0.1%    0.1%  T void node::StreamBase::JSMethod<&(node::StreamBase::Writev(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+     22    0.1%    0.1%  t node::fs::InternalModuleReadJSON(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.0%    0.0%  T node::contextify::ContextifyContext::CompileFunction(v8::FunctionCallbackInfo<v8::Value> const&)
+     16    0.0%    0.0%  T _kpersona_info
+     13    0.0%    0.0%  T ___guarded_open_np
+      9    0.0%    0.0%  t __ZN2v88internal12StringHasher20HashSequentialStringIhEEjPKT_iy
+      9    0.0%    0.0%  T _mach_vm_purgable_control
+      6    0.0%    0.0%  T node::binding::GetInternalBinding(v8::FunctionCallbackInfo<v8::Value> const&)
+      5    0.0%    0.0%  T __platform_memcmp
+      4    0.0%    0.0%  t void node::Buffer::(anonymous namespace)::StringWrite<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&)
+      4    0.0%    0.0%  T node::TTYWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.0%    0.0%  t _szone_malloc_should_clear
+      3    0.0%    0.0%  T node::crypto::Hash::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  t node::fs::LStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  t _update_cache_for_file_streams
+      2    0.0%    0.0%  t __ZN2v88internal17PrototypeIterator7AdvanceEv
+      2    0.0%    0.0%  t __ZN2v88internal14LookupIteratorC2EPNS0_7IsolateENS0_6HandleINS0_6ObjectEEENS4_INS0_4NameEEEmNS4_INS0_10JSReceiverEEENS1_13ConfigurationE
+      2    0.0%    0.0%  T std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >::getline(wchar_t*, long)
+      2    0.0%    0.0%  T node::fs::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  T node::crypto::TimingSafeEqual(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  T node::crypto::Hash::HashDigest(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.0%  T _vm_allocate
+      2    0.0%    0.0%  T _mach_msg_server_once
+      2    0.0%    0.0%  T _mach_error_type
+      2    0.0%    0.0%  T _freopen
+      1    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::__put_character_sequence<char, std::__1::char_traits<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, char const*, unsigned long)
+      1    0.0%    0.0%  t std::__1::__stdinbuf<wchar_t>::pbackfail(int)
+      1    0.0%    0.0%  t node::fs::Open(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::fs::InternalModuleStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::fs::FStat(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::LibuvStreamWrap::ReadStart()::$_1::__invoke(uv_handle_s*, unsigned long, uv_buf_t*)
+      1    0.0%    0.0%  t node::Buffer::(anonymous namespace)::ByteLengthUtf8(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::SignalWrap::Start(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::Parser::Proxy<int (node::(anonymous namespace)::Parser::*)(), &(node::(anonymous namespace)::Parser::on_message_begin())>::Raw(llhttp__internal_s*)
+      1    0.0%    0.0%  t node::(anonymous namespace)::Parser::Proxy<int (node::(anonymous namespace)::Parser::*)(), &(node::(anonymous namespace)::Parser::on_headers_complete())>::Raw(llhttp__internal_s*)
+      1    0.0%    0.0%  t node::(anonymous namespace)::Parser::OnStreamRead(long, uv_buf_t const&)
+      1    0.0%    0.0%  t node::(anonymous namespace)::GetLibuvNow(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  t _insert_node
+      1    0.0%    0.0%  t __malloc_initialize
+      1    0.0%    0.0%  t ___vfwscanf
+      1    0.0%    0.0%  t __ZN2v88internal6Object13GetSimpleHashES1_
+      1    0.0%    0.0%  t __ZN2v88internal25FunctionCallbackArguments4CallENS0_15CallHandlerInfoE
+      1    0.0%    0.0%  t __ZN2v84base19TemplateHashMapImplIPvS2_NS0_26HashEqualityThenKeyMatcherIS2_PFbS2_S2_EEENS0_23DefaultAllocationPolicyEE9InsertNewERKS2_jS7_
+      1    0.0%    0.0%  t __ZN2v812_GLOBAL__N_114CallDepthScopeILb1EEC1EPNS_8internal7IsolateENS_5LocalINS_7ContextEEE
+      1    0.0%    0.0%  T std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >::readsome(wchar_t*, long)
+      1    0.0%    0.0%  T std::__1::basic_istream<wchar_t, std::__1::char_traits<wchar_t> >::get(std::__1::basic_streambuf<wchar_t, std::__1::char_traits<wchar_t> >&, wchar_t)
+      1    0.0%    0.0%  T node::options_parser::GetOptions(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::crypto::Hash::HashUpdate(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::TCPWrap::Bind6(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T node::InternalCallbackScope::Close()
+      1    0.0%    0.0%  T node::Emit(node::Environment*, double, node::AsyncHooks::Fields, v8::Local<v8::Function>)
+      1    0.0%    0.0%  T node::AsyncWrap::EmitTraceEventBefore()
+      1    0.0%    0.0%  T node::AsyncWrap::EmitBefore(node::Environment*, double)
+      1    0.0%    0.0%  T _fputwc_l
+      1    0.0%    0.0%  T ___malloc_init
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors25BoundFunctionLengthGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors20FunctionLengthGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal8Builtins14builtin_handleEi
+      1    0.0%    0.0%  T __ZN2v88internal25FunctionCallbackArgumentsC1EPNS0_7IsolateENS0_6ObjectENS0_10HeapObjectES4_S5_Pmi
+      1    0.0%    0.0%  T __ZN2v88internal25Builtin_ArrayBufferIsViewEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88Function4CallENS_5LocalINS_7ContextEEENS1_INS_5ValueEEEiPS5_
+      1    0.0%    0.0%  T __ZN2v87Isolate17GetCurrentContextEv
+      1    0.0%    0.0%  T __ZN2v87Integer3NewEPNS_7IsolateEi
+
+ [Summary]:
+   ticks  total  nonlib   name
+      7    0.0%    0.0%  JavaScript
+  42194   99.9%  100.0%  C++
+     74    0.2%    0.2%  GC
+     18    0.0%          Shared libraries
+      8    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+  41606   98.9%   98.5%  T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+    444    1.1%    1.1%  t __ZN2v88internal11IdentityMapIjNS0_25FreeStoreAllocationPolicyEED0Ev
+      4    0.0%    0.0%  T __ZN2v88internal17Builtin_JsonParseEiPmPNS0_7IsolateE
+      2    0.0%    0.0%  T __ZN2v88internal32Builtin_GlobalDecodeURIComponentEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  t node::url::(anonymous namespace)::Parse(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors25BoundFunctionLengthGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal9Accessors20FunctionLengthGetterENS_5LocalINS_4NameEEERKNS_20PropertyCallbackInfoINS_5ValueEEE
+      1    0.0%    0.0%  T __ZN2v88internal27Builtin_FunctionConstructorEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal25Builtin_ArrayBufferIsViewEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal19Builtin_ArrayConcatEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal18Builtin_ArrayShiftEiPmPNS0_7IsolateE
+      1    0.0%    0.0%  T __ZN2v88internal16Builtin_ArrayPopEiPmPNS0_7IsolateE
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  41330   97.9%  T node::crypto::PBKDF2(v8::FunctionCallbackInfo<v8::Value> const&)
+  41330  100.0%    T __ZN2v88internal21Builtin_HandleApiCallEiPmPNS0_7IsolateE
+  41330  100.0%      LazyCompile: ~pbkdf2Sync internal/crypto/pbkdf2.js:44:20
+  41263   99.8%        LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+  41263  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+  41263  100.0%            LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+
+    451    1.1%  t __ZN2v88internal11IdentityMapIjNS0_25FreeStoreAllocationPolicyEED0Ev
+    154   34.1%    t __ZN2v88internal11IdentityMapIjNS0_25FreeStoreAllocationPolicyEED0Ev
+     19   12.3%      LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+     19  100.0%        LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+     19  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+     19  100.0%            LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+     17   11.0%      t __ZN2v88internal11IdentityMapIjNS0_25FreeStoreAllocationPolicyEED0Ev
+      5   29.4%        LazyCompile: ~checkInvalidHeaderChar _http_common.js:230:32
+      5  100.0%          LazyCompile: ~<anonymous> _http_outgoing.js:549:45
+      4   80.0%            LazyCompile: ~hidden internal/errors.js:286:25
+      1   20.0%            LazyCompile: *hidden internal/errors.js:286:25
+      3   17.6%        LazyCompile: ~format /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/content-type/index.js:65:17
+      3  100.0%          LazyCompile: ~setCharset /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/utils.js:248:41
+      3  100.0%            LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      2   11.8%        LazyCompile: ~header /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:777:29
+      2  100.0%          LazyCompile: ~contentType /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:619:32
+      2  100.0%            LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      1    5.9%        LazyCompile: ~stringToPath /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/get-intrinsic/index.js:209:41
+      1  100.0%          LazyCompile: ~GetIntrinsic /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/get-intrinsic/index.js:252:39
+      1  100.0%            Eval: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/call-bind/index.js:1:1
+      1    5.9%        LazyCompile: ~pathtoRegexp /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          LazyCompile: ~Layer /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~route /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:502:29
+      1    5.9%        LazyCompile: ~parseQueryStringValues /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/qs/lib/parse.js:51:50
+      1  100.0%          LazyCompile: ~module.exports /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/qs/lib/parse.js:239:27
+      1  100.0%            LazyCompile: ~parseExtendedQueryString /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/utils.js:289:34
+      1    5.9%        LazyCompile: ~parseObject /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/qs/lib/parse.js:115:28
+      1  100.0%          LazyCompile: ~parseQueryStringKeys /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/qs/lib/parse.js:150:46
+      1  100.0%            LazyCompile: ~module.exports /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/qs/lib/parse.js:239:27
+      1    5.9%        LazyCompile: ~match /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%          LazyCompile: ~matchLayer /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:583:20
+      1  100.0%            LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      1    5.9%        LazyCompile: ~SafeMap internal/per_context/primordials.js:94:3
+      1  100.0%          Eval: ~<static_fields_initializer> internal/bootstrap/loaders.js:169:3
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/loaders.js:1:1
+      1    5.9%        Eval: ~<anonymous> internal/child_process.js:1:1
+      1  100.0%          LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:270:27
+      1  100.0%            LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:303:29
+     10    6.5%      LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+     10  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+     10  100.0%          LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+     10  100.0%            LazyCompile: ~dispatch /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:98:45
+      7    4.5%      LazyCompile: ~writeHead _http_server.js:254:19
+      7  100.0%        LazyCompile: ~_implicitHeader _http_server.js:249:68
+      7  100.0%          LazyCompile: ~write_ _http_outgoing.js:704:16
+      7  100.0%            LazyCompile: ~end _http_outgoing.js:795:45
+      6    3.9%      LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      5   83.3%        LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      5  100.0%          LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+      5  100.0%            LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      1   16.7%        LazyCompile: ~json /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:250:25
+      1  100.0%          LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:9:14
+      1  100.0%            LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      6    3.9%      LazyCompile: ~parse /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/content-type/index.js:106:16
+      6  100.0%        LazyCompile: ~setCharset /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/utils.js:248:41
+      6  100.0%          LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      6  100.0%            LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      4    2.6%      LazyCompile: ~setHeader _http_outgoing.js:559:57
+      3   75.0%        LazyCompile: ~header /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:777:29
+      2   66.7%          LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      2  100.0%            LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      1   33.3%          LazyCompile: ~contentType /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:619:32
+      1  100.0%            LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      1   25.0%        LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      4    2.6%      LazyCompile: ~Hash internal/crypto/hash.js:37:14
+      4  100.0%        LazyCompile: ~createHash crypto.js:115:20
+      4  100.0%          LazyCompile: ~entitytag /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/etag/index.js:39:20
+      4  100.0%            LazyCompile: ~etag /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/etag/index.js:70:15
+      3    1.9%      LazyCompile: ~resOnFinish _http_server.js:760:21
+      3  100.0%        LazyCompile: ~emit events.js:325:44
+      3  100.0%          LazyCompile: ~onFinish _http_outgoing.js:790:18
+      3  100.0%            LazyCompile: ~callback internal/streams/writable.js:511:44
+      3    1.9%      LazyCompile: ~parserOnMessageComplete _http_common.js:145:33
+      3    1.9%      LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      3  100.0%        LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      3  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      3  100.0%            LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      3    1.9%      LazyCompile: ~end _http_outgoing.js:795:45
+      3  100.0%        LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      3  100.0%          LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      3  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+      3    1.9%      LazyCompile: ~_storeHeader _http_outgoing.js:362:22
+      3  100.0%        LazyCompile: ~writeHead _http_server.js:254:19
+      3  100.0%          LazyCompile: ~_implicitHeader _http_server.js:249:68
+      3  100.0%            LazyCompile: ~write_ _http_outgoing.js:704:16
+      3    1.9%      LazyCompile: ~Module.load internal/modules/cjs/loader.js:921:33
+      3  100.0%        LazyCompile: ~Module._load internal/modules/cjs/loader.js:709:24
+      3  100.0%          LazyCompile: ~Module.require internal/modules/cjs/loader.js:949:36
+      3  100.0%            LazyCompile: ~require internal/modules/cjs/helpers.js:87:31
+      2    1.3%      LazyCompile: ~write_ _http_outgoing.js:704:16
+      2  100.0%        LazyCompile: ~end _http_outgoing.js:795:45
+      2  100.0%          LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      2  100.0%            LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      2    1.3%      LazyCompile: ~nextTick internal/process/task_queues.js:103:18
+      1   50.0%        LazyCompile: ~resOnFinish _http_server.js:760:21
+      1  100.0%          LazyCompile: ~emit events.js:325:44
+      1  100.0%            LazyCompile: ~onFinish _http_outgoing.js:790:18
+      1   50.0%        LazyCompile: ~emitReadable internal/streams/readable.js:554:22
+      1  100.0%          LazyCompile: ~onEofChunk internal/streams/readable.js:524:20
+      1  100.0%            LazyCompile: ~readableAddChunk internal/streams/readable.js:231:26
+      2    1.3%      LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%        LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+      2  100.0%          LazyCompile: ~dispatch /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:98:45
+      2  100.0%            LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      2    1.3%      LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:136:31
+      2  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/application.js:165:29
+      2  100.0%          LazyCompile: ~app /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/express.js:38:21
+      2  100.0%            LazyCompile: ~emit events.js:325:44
+      2    1.3%      LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      2  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      2  100.0%          LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      2  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:280:64
+      2    1.3%      LazyCompile: ~endReadableNT internal/streams/readable.js:1329:23
+      1   50.0%        LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:67:35
+      1   50.0%        LazyCompile: *processTicksAndRejections internal/process/task_queues.js:67:35
+      2    1.3%      LazyCompile: ~clearIncoming _http_server.js:718:23
+      2  100.0%        LazyCompile: ~resOnFinish _http_server.js:760:21
+      2  100.0%          LazyCompile: ~emit events.js:325:44
+      2  100.0%            LazyCompile: ~onFinish _http_outgoing.js:790:18
+      7    1.6%    LazyCompile: ~setHeader _http_outgoing.js:559:57
+      6   85.7%      LazyCompile: ~header /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:777:29
+      5   83.3%        LazyCompile: ~contentType /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:619:32
+      5  100.0%          LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      5  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+      1   16.7%        LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      1  100.0%          LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      1  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+      1   14.3%      LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: *next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      7    1.6%    LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      7  100.0%      LazyCompile: ~sendStatus /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:369:37
+      7  100.0%        LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/index.js:36:23
+      7  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      7  100.0%            LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+      7    1.6%    LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      3   42.9%      LazyCompile: ~query /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/query.js:39:24
+      3  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      3  100.0%          LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      3  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:280:64
+      3   42.9%      LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:136:31
+      3  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/application.js:165:29
+      3  100.0%          LazyCompile: ~app /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/express.js:38:21
+      3  100.0%            LazyCompile: ~emit events.js:325:44
+      1   14.3%      LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      1  100.0%        LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%          LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      1  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:280:64
+      6    1.3%    LazyCompile: ~parserOnIncoming _http_server.js:822:26
+      6  100.0%      LazyCompile: ~parserOnHeadersComplete _http_common.js:75:33
+      6    1.3%    LazyCompile: ~parserOnHeadersComplete _http_common.js:75:33
+      6    1.3%    LazyCompile: ~emit events.js:325:44
+      3   50.0%      LazyCompile: ~_finish _http_outgoing.js:874:53
+      3  100.0%        LazyCompile: ~_finish _http_server.js:190:52
+      3  100.0%          LazyCompile: ~end _http_outgoing.js:795:45
+      3  100.0%            LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      1   16.7%      LazyCompile: ~onFinish _http_outgoing.js:790:18
+      1  100.0%        LazyCompile: ~callback internal/streams/writable.js:511:44
+      1  100.0%          LazyCompile: ~afterWrite internal/streams/writable.js:456:20
+      1  100.0%            LazyCompile: ~afterWriteTick internal/streams/writable.js:451:24
+      1   16.7%      LazyCompile: ~endReadableNT internal/streams/readable.js:1329:23
+      1  100.0%        LazyCompile: *processTicksAndRejections internal/process/task_queues.js:67:35
+      1   16.7%      LazyCompile: ~assignSocket _http_server.js:224:62
+      1  100.0%        LazyCompile: ~parserOnIncoming _http_server.js:822:26
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete _http_common.js:75:33
+      6    1.3%    LazyCompile: ~_storeHeader _http_outgoing.js:362:22
+      6  100.0%      LazyCompile: ~writeHead _http_server.js:254:19
+      6  100.0%        LazyCompile: ~_implicitHeader _http_server.js:249:68
+      6  100.0%          LazyCompile: ~write_ _http_outgoing.js:704:16
+      6  100.0%            LazyCompile: ~end _http_outgoing.js:795:45
+      6    1.3%    LazyCompile: ~_addListener events.js:404:22
+      6  100.0%      LazyCompile: ~addListener events.js:466:58
+      5   83.3%        LazyCompile: ~Readable.on internal/streams/readable.js:866:33
+      2   40.0%          LazyCompile: ~parserOnIncoming _http_server.js:822:26
+      2  100.0%            LazyCompile: ~parserOnHeadersComplete _http_common.js:75:33
+      2   40.0%          LazyCompile: ~clearIncoming _http_server.js:718:23
+      2  100.0%            LazyCompile: ~resOnFinish _http_server.js:760:21
+      1   20.0%          LazyCompile: ~socketListenerWrap _http_server.js:945:37
+      1  100.0%            LazyCompile: ~assignSocket _http_server.js:224:62
+      1   16.7%        LazyCompile: ~parserOnIncoming _http_server.js:822:26
+      1  100.0%          LazyCompile: ~parserOnHeadersComplete _http_common.js:75:33
+      5    1.1%    LazyCompile: ~writeHead _http_server.js:254:19
+      5  100.0%      LazyCompile: ~_implicitHeader _http_server.js:249:68
+      5  100.0%        LazyCompile: ~write_ _http_outgoing.js:704:16
+      5  100.0%          LazyCompile: ~end _http_outgoing.js:795:45
+      5  100.0%            LazyCompile: ~send /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/response.js:111:25
+      5    1.1%    LazyCompile: ~processTicksAndRejections internal/process/task_queues.js:67:35
+      5    1.1%    LazyCompile: ~parserOnMessageComplete _http_common.js:145:33
+      5    1.1%    LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      2   40.0%      LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:116:16
+      2  100.0%        LazyCompile: ~dispatch /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/route.js:98:45
+      1   50.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/layer.js:86:49
+      1  100.0%            LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:280:64
+      1   50.0%          LazyCompile: *next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      1  100.0%            LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      2   40.0%      LazyCompile: ~<anonymous> /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:280:64
+      2  100.0%        LazyCompile: ~process_params /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:338:47
+      2  100.0%          LazyCompile: ~next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      2  100.0%            LazyCompile: ~expressInit /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/middleware/init.js:29:30
+      1   20.0%      LazyCompile: ~trim_prefix /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:293:23
+      1  100.0%        LazyCompile: *next /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:177:16
+      1  100.0%          LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/router/index.js:136:31
+      1  100.0%            LazyCompile: ~handle /Users/ale/Google Drive (ahuertas@fi.uba.ar)/Programacion/Web/CODER HOUSE/BackEnd/BackEnd-CODER/Clase_32-Logs-Profile-debug_Pte-II/profile/node_modules/express/lib/application.js:165:29
+

@@ -1,0 +1,7 @@
+[2022-05-17T07:04:05.688] [INFO] archivo2 - Logger info
+[2022-05-17T07:04:05.691] [WARN] archivo2 - Logger warn
+[2022-05-17T07:04:05.691] [ERROR] archivo2 - Logger error
+[2022-05-17T07:04:05.691] [FATAL] archivo2 - Logger fatal
+[2022-05-17T07:04:49.076] [ERROR] all - Logger error
+[2022-05-17T07:04:49.083] [FATAL] all - Logger fatal
+[2022-05-17T07:08:34.961] [ERROR] all - Logger error
