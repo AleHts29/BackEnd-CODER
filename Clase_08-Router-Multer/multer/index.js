@@ -8,8 +8,8 @@ const port = 4002;
 
 // confi Multer --> doinde guardo archivos
 let storage = multer.diskStorage({
-  // ruta donde voy a guardar mis archivos
   destination: function (req, file, cb) {
+    // "update" es la ruta donde voy a guardar mis archivos
     cb(null, "update");
   },
 

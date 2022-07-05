@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-let arr = require("./arr");
+let arr = require("./arr.js");
 
 // Le informo a mi server que va a recibir archivos en formato JSON
 app.use(express.json());
@@ -95,7 +95,7 @@ app.delete("/:id", (req, res) => {
   });
   arr = newArr;
 
-  res.send(`El id:${id} se elimono correctamente`);
+  res.send(`El id:${id} se elimino correctamente`);
 });
 
 app.listen(3002, () => {

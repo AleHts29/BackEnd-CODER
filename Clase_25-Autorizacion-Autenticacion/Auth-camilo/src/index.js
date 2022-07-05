@@ -129,3 +129,10 @@ app.post(
 app.listen(8080, () => {
   console.log("Server ok");
 });
+
+// CREAR ROLES --> esas credenciales se pasan por unreadme.md
+/*
+role: enum('user', 'admin')
+defaul: 'user'
+
+*/
