@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/AleHts29/BackEnd-CODER/issues"
   },
-  "homepage": "https://github.com/AleHts29/BackEnd-CODER#readme"
+  "homepage": "https://github.com/AleHts29/BackEnd-CODER#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "koa": "^2.13.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.19.0"
+  }
 }
